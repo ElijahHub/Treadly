@@ -9,6 +9,7 @@ const Confirmation = lazy(() => import('./Confirmation'))
 const Wishlist = lazy(() => import('./Wishlist'))
 const ProductDetail = lazy(() => import('./ProductDetail'))
 const Blog = lazy(() => import('./Blog'))
+const About = lazy(() => import('./About'))
 
 
 export {
@@ -19,5 +20,6 @@ export {
   Checkout,
   Confirmation,
   Wishlist,
-  ProductDetail
+  ProductDetail,
+  About
 }

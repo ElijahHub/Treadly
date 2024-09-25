@@ -9,16 +9,21 @@ export const navigation = [
   },
   {
     id: '1',
+    title: 'About',
+    url: '/about'
+  },
+  {
+    id: '2',
     title: 'Shop',
     url: '/shop'
   },
   {
-    id: '2',
+    id: '3',
     title: 'Blog',
     url: '/blog'
   },
   {
-    id: '3',
+    id: '4',
     title: 'Contacts',
     url: '/contacts'
   },

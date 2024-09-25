@@ -20,7 +20,7 @@ const Blog = () => {
     <>
       <CommonHero text='Blog' quote='BLOG' image={banner} />
       <div className='container my-20 '>
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-10 '>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10 py-10 '>
           {blogContent.flatMap((item) => (
             <div key={item.title} className='flex flex-col gap-6 group'>
               <div className='w-full h-[17rem] overflow-hidden box-border  '>
@@ -30,7 +30,7 @@ const Blog = () => {
                   className='w-full h-full scale-[1.2] group-hover:translate-x-3 '
                 />
               </div>
-              <div className='flex flex-wrap gap-3'>
+              <div className='flex flex-wrap gap-5'>
                 {tags.flatMap((el, i) => (
                   <div
                     key={i}

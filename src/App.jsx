@@ -10,6 +10,7 @@ import {
   Wishlist,
   ProductDetail,
   Blog,
+  About,
 } from "./pages";
 import { Footer, Loader, Navbar, ScrollToTop } from "./components";
 import { StateProvider } from "./context/StateContext";
@@ -22,6 +23,7 @@ const App = () => {
         <Suspense fallback={<Loader />}>
           <Routes>
             <Route path='/' element={<Home />} />
+            <Route path='/about' element={<About />} />
             <Route path='/shop' element={<Shop />} />
             <Route path='/blog' element={<Blog />} />
             <Route path='/shop/cart' element={<Cart />} />

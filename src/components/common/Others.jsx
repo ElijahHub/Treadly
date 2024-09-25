@@ -17,7 +17,7 @@ export const Box = ({ children, className, background, title, onClick }) => {
 
 export const CommonHero = ({ text, quote, image }) => {
   return (
-    <main className='mt-[5rem] relative  bg-color-3/10 shadow-sm lg:rounded-br-3xl '>
+    <main className='mt-[5rem] relative  bg-[#eee] shadow-sm lg:rounded-br-3xl '>
       <div className='container relative flex items-center py-24 lg:py-0 '>
         <div className=''>
           <h3 className='h3 mb-3 text-n-4 font-serif'>{quote}</h3>
