@@ -8,12 +8,13 @@ const Checkout = lazy(() => import('./Checkout'))
 const Confirmation = lazy(() => import('./Confirmation'))
 const Wishlist = lazy(() => import('./Wishlist'))
 const ProductDetail = lazy(() => import('./ProductDetail'))
+const Blog = lazy(() => import('./Blog'))
 
 
 export {
   Home,
   PageNotFound,
-  Shop,
+  Shop, Blog,
   Cart,
   Checkout,
   Confirmation,
