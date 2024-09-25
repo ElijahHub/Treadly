@@ -1,5 +1,5 @@
 import axios from "axios"
-import { f_icon1, f_icon2, f_icon3, f_icon4, label_1, label_2, label_3, label_4, label_5, shoe_1, shoe_2, shoe_3, shoe_4, shoe_5, shoe_6, shoe_7, shoe_8, shoe_9 } from "../assets"
+import { blogImg1, blogImg2, blogImg3, blogImg4, blogImg5, blogImg6, f_icon1, f_icon2, f_icon3, f_icon4, label_1, label_2, label_3, label_4, label_5, shoe_1, shoe_2, shoe_3, shoe_4, shoe_5, shoe_6, shoe_7, shoe_8, shoe_9 } from "../assets"
 
 export const navigation = [
   {
@@ -232,6 +232,33 @@ export const catalog = [
     ]
   },
 
+]
+
+export const blogContent = [
+  {
+    image: blogImg1,
+    title: 'Tree earth fowl given move deep lesser After.'
+  },
+  {
+    image: blogImg2,
+    title: 'Given Set was without from god divide rule Hath.'
+  },
+  {
+    image: blogImg3,
+    title: 'A lesson in path silhouettes with our design team.'
+  },
+  {
+    image: blogImg4,
+    title: 'Heaven upon heaven move every have.'
+  },
+  {
+    image: blogImg5,
+    title: 'Third darkness and second dry greater.'
+  },
+  {
+    image: blogImg6,
+    title: 'The morning let you created everyday.'
+  },
 ]
 
 export const checkOutFormEl = [

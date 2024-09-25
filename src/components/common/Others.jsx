@@ -29,7 +29,7 @@ export const CommonHero = ({ text, quote, image }) => {
         </div>
 
         <div className='hidden lg:block mx-auto mr-10'>
-          <img src={image} width={400} className='rounded-lg' alt='banner' />
+          <img src={image} width={330} className='rounded-lg' alt='banner' />
         </div>
       </div>
     </main>

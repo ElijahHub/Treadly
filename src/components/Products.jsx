@@ -46,7 +46,7 @@ const Products = ({ handleAddToCart, handleAddToWishList, onClickView }) => {
 
         {/* display */}
         <Box
-          className=' w-full rounded-3xl flex items-center justify-center py-16 '
+          className=' w-full rounded-3xl flex items-center justify-center py-2'
           background='bg-n-1'
         >
           <div className='grid  md:grid-cols-2 lg:grid-cols-4 items-center justify-center gap-6 '>
