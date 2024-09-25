@@ -28,6 +28,13 @@ import facebook_logo from './icon/facebook_logo.png'
 import google_logo from './icon/google_logo.png'
 import ios_logo from './icon/ios_logo.png'
 
+import blogImg1 from './blog/blog_img_1.jpg'
+import blogImg2 from './blog/blog_img_2.jpg'
+import blogImg3 from './blog/blog_img_3.jpg'
+import blogImg4 from './blog/blog_img_4.jpg'
+import blogImg5 from './blog/blog_img_5.jpg'
+import blogImg6 from './blog/blog_img_6.jpg'
+
 
 export {
   logo,
@@ -57,5 +64,11 @@ export {
   detailsPayment,
   facebook_logo,
   google_logo,
-  ios_logo
+  ios_logo,
+  blogImg1,
+  blogImg2,
+  blogImg3,
+  blogImg4,
+  blogImg5,
+  blogImg6,
 }
