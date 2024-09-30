@@ -118,21 +118,11 @@ export const products = [
 export const labels = [label_1, label_2, label_3, label_4, label_5]
 
 export const FAQS = [
-  {
-    title: 'Bring of had which their whose yours it own ?'
-  },
-  {
-    title: 'Over shall air cant subdue fly divide him ?'
-  },
-  {
-    title: 'Waters one you will creeping ?'
-  },
-  {
-    title: 'Fowl, given morning seed fruitful kind beast be ?'
-  },
-  {
-    title: 'Land had man doesn\'t the very a kind ?'
-  },
+  'Bring of had which their whose yours it own ?',
+  'Over shall air cant subdue fly divide him ?',
+  'Waters one you will creeping ?',
+  'Fowl, given morning seed fruitful kind beast be ?',
+  'Land had man doesn\'t the very a kind ?'
 ]
 
 export const deals = [
