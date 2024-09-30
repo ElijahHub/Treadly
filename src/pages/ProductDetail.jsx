@@ -1,13 +1,23 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { CommonHeading, Box } from "../components/common/Others";
 import { detailsPayment, shoe_1, shoe_2, shoe_3 } from "../assets";
-import { Button, Input } from "../components/common";
+import { Button } from "../components/common";
 import { FaCartPlus } from "react-icons/fa6";
 import { BiHeart, BiSolidHeart } from "react-icons/bi";
 import Deals from "../components/Deals";
 import { StateContext } from "../context/StateContext";
+import { useNavigate } from "react-router-dom";
+
 const ProductDetail = () => {
   const { productInView, dispatch, wishlist } = useContext(StateContext);
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (Object.entries(productInView).length === 0) {
+      navigate("/shop");
+    }
+  }, [productInView, navigate]);
 
   const [image, setImage] = useState(shoe_1);
 

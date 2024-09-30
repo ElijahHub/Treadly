@@ -1,8 +1,38 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { Box, CommonHeading } from "../components/common/Others";
-import { cart, checkOut, confirmation } from "../constant";
+import { confirmation } from "../constant";
+import { StateContext } from "../context/StateContext";
+import { useNavigate } from "react-router-dom";
 
 const Confirmation = () => {
+  const { cartItems } = useContext(StateContext);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (cartItems.length === 0) {
+      navigate("/shop");
+    }
+  }, [cartItems, navigate]);
+
+  const total = cartItems
+    .map((item) => Number(item.price.replace("$", 0)))
+    .reduce((a, b) => a + b, 0);
+
+  const checkOut = [
+    {
+      title: "SUBTOTAL",
+      value: total,
+    },
+    {
+      title: "SHIPPING",
+      value: cartItems.length >= 10 ? 100 : 50,
+    },
+    {
+      title: "TOTAL",
+      value: total + (cartItems.length >= 10 ? 100 : 50),
+    },
+  ];
+
   return (
     <>
       <CommonHeading title='Confirmation' />
@@ -43,7 +73,7 @@ const Confirmation = () => {
               </tr>
             </thead>
             <tbody>
-              {cart.map((item) => (
+              {cartItems.map((item) => (
                 <tr key={item.id} className='border-y border-n-3 '>
                   <td className='body-2 text-n-4 py-4'>{item.name}</td>
                   <td className='body-2 text-n-4 py-4'>
