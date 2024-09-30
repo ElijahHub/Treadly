@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { CommonHero } from "../components/common/Others";
 import { banner, shoe_1, shoe_2, shoe_4, shoe_6, shoe_7 } from "../assets";
 import { Button } from "../components/common";
-import { labels } from "../constant";
+import { FAQS, labels } from "../constant";
+import { FaQuestionCircle } from "react-icons/fa";
+import { BsFillQuestionCircleFill } from "react-icons/bs";
+import { CiCircleQuestion } from "react-icons/ci";
 
 const About = () => {
+  const [active, setActive] = useState(0);
+
   return (
     <>
       <CommonHero text='About' quote='ABOUT US' image={banner} />
@@ -67,7 +72,7 @@ const About = () => {
           ))}
         </div>
       </div>
-      <div className='container my-20  grid grid-cols-1 gap-6 lg:grid-cols-2 '>
+      <div className='container my-20  grid grid-cols-1 gap-6 justify-center lg:grid-cols-2 '>
         <div className=' hidden lg:flex relative py-20 '>
           <div className=' relative w-[20rem] h-[30rem] overflow-hidden box-border'>
             <img
@@ -86,17 +91,41 @@ const About = () => {
             />
           </div>
         </div>
-        <div className='flex-col gap-4 py-20 '>
+        <div className=' flex flex-col gap-4 '>
           <p className='body-2 text-red-500'>Find Answer Here</p>
-          <h4 className='h4 text-n-8'>Classic Interiors & Exteriors</h4>
+          <h3 className='h3 text-n-8'>Classic Interiors & Exteriors</h3>
           <p className='body-2 text-n-3'>
             {" "}
             Mobilia similitude solute laboriously distinction, ahem maxima endue
             under aquae dolores banditries <br />
             Mobilia similitude solute laboriously distinction, ahem maxima
           </p>
+
+          <div className='flex flex-col gap-2 pt-5  '>
+            {FAQS.map((el, i) => (
+              <div key={i} className='flex flex-col gap-3'>
+                <div
+                  className='border border-n-3 flex justify-between items-center py-3 px-6 cursor-pointer '
+                  onClick={() => setActive(i)}
+                >
+                  <h6 className='h6'>{el}</h6>
+                  <CiCircleQuestion className='h4' />
+                </div>
+                <div className={`${active === i ? "" : "hidden"} px-6 py-2`}>
+                  <p className='body-2 text-n-3'>
+                    Saw wherein fruitful good days image them, midst, waters
+                    upon, swa. Seas light seasons. Fourth hath rule creepster
+                    own lesser years itself so seed fifth for grass.
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
+      <hr className='border-[0.5px] border-[#eee]  ' />
+
+      <div className='container'></div>
     </>
   );
 };
