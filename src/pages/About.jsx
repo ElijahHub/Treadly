@@ -1,6 +1,6 @@
 import React from "react";
 import { CommonHero } from "../components/common/Others";
-import { banner, shoe_1, shoe_2, shoe_4 } from "../assets";
+import { banner, shoe_1, shoe_2, shoe_4, shoe_6, shoe_7 } from "../assets";
 import { Button } from "../components/common";
 import { labels } from "../constant";
 
@@ -65,6 +65,36 @@ const About = () => {
               />
             </div>
           ))}
+        </div>
+      </div>
+      <div className='container my-20  grid grid-cols-1 gap-6 lg:grid-cols-2 '>
+        <div className=' hidden lg:flex relative py-20 '>
+          <div className=' relative w-[20rem] h-[30rem] overflow-hidden box-border'>
+            <img
+              src={shoe_6}
+              alt='nike'
+              width={400}
+              className='w-full h-full'
+            />
+          </div>
+          <div className='relative top-[20%] left-[-18%]  w-[20rem] h-[30rem] overflow-hidden box-border'>
+            <img
+              src={shoe_4}
+              alt='nike'
+              width={400}
+              className='w-full h-full'
+            />
+          </div>
+        </div>
+        <div className='flex-col gap-4 py-20 '>
+          <p className='body-2 text-red-500'>Find Answer Here</p>
+          <h4 className='h4 text-n-8'>Classic Interiors & Exteriors</h4>
+          <p className='body-2 text-n-3'>
+            {" "}
+            Mobilia similitude solute laboriously distinction, ahem maxima endue
+            under aquae dolores banditries <br />
+            Mobilia similitude solute laboriously distinction, ahem maxima
+          </p>
         </div>
       </div>
     </>
