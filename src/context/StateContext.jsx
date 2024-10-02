@@ -1,12 +1,24 @@
-import { useReducer, createContext } from "react";
+import { useReducer, createContext, useEffect } from "react";
 
 export const StateContext = createContext();
 
-const initialState = {
-  cartItems: [],
-  wishlist: [],
-  productInView: {},
+const loadStoredData = () => {
+  const storedData = localStorage.getItem("USER_DATA");
+  return storedData ? JSON.parse(storedData) : {};
 };
+
+const updateStoredData = (data) => {
+  localStorage.setItem("USER_DATA", JSON.stringify(data));
+};
+
+const initialState =
+  Object.entries(loadStoredData()).length === 0
+    ? {
+        cartItems: [],
+        wishlist: [],
+        productInView: {},
+      }
+    : loadStoredData();
 
 const addToCart = (state, action) => {
   const existingItem = state.cartItems.find(
@@ -89,6 +101,13 @@ const stateReducer = (state, action) => {
 
 export const StateProvider = ({ children }) => {
   const [state, dispatch] = useReducer(stateReducer, initialState);
+
+  console.log(state);
+
+  useEffect(() => {
+    updateStoredData(state);
+  }, [state]);
+
   return (
     <StateContext.Provider
       value={{
