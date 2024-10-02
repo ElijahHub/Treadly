@@ -21,6 +21,7 @@ const ProductCat = ({ handleAddToCart, handleAddToWishList, onClickView }) => {
     selectedPrice: [],
     sortColumn: "desc",
     searchState: "",
+    selectedColor: null,
   };
 
   const [state, setState] = useState(stateObj);
@@ -87,6 +88,10 @@ const ProductCat = ({ handleAddToCart, handleAddToWishList, onClickView }) => {
       : setState({ ...state, selectedPrice: brandChecked });
   };
 
+  const handleColorSelection = (color) => {
+    setState({ ...state, selectedColor: color });
+  };
+
   const getPageData = () => {
     const searchValue = searchState.toLowerCase();
 
@@ -148,7 +153,11 @@ const ProductCat = ({ handleAddToCart, handleAddToWishList, onClickView }) => {
             <BiSearch className='absolute text-xl right-3 top-3.5 text-n-4' />
           </div>
 
-          <Accordion className='w-full' handleChecked={handleChecked} />
+          <Accordion
+            className='w-full'
+            handleChecked={handleChecked}
+            handleColorSelection={handleColorSelection}
+          />
         </div>
         {/* Main shop */}
         <div id='start'>

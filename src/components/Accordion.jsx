@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { catalog } from "../constant";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
-const Accordion = ({ className, handleChecked }) => {
+const Accordion = ({ className, handleChecked, handleColorSelection }) => {
   const obj = {
     branding: true,
     "filter price": true,
@@ -38,7 +38,7 @@ const Accordion = ({ className, handleChecked }) => {
             className={` w-full flex gap-2 mb-6 border-b border-n-5/40 pb-5 transition-all ${
               item.title.toLowerCase() === "gender" ||
               item.title.toLowerCase() === "colors"
-                ? "flex-row"
+                ? "flex-row flex-wrap"
                 : "flex-col"
             } ${active[item.title.toLowerCase()] ? "block" : "hidden"} `}
           >
@@ -46,7 +46,8 @@ const Accordion = ({ className, handleChecked }) => {
               <div key={j}>
                 {item.title.toLowerCase() === "colors" ? (
                   <div
-                    className={`w-[2.3rem] h-[2.3rem] rounded-full cursor-pointer  ${el.choiceTitle} `}
+                    className={`w-[2.3rem] h-[2.3rem] rounded-full cursor-pointer  ${el.choiceTitle} border `}
+                    onClick={() => handleColorSelection(el.value)}
                   ></div>
                 ) : (
                   <div className='flex gap-2'>

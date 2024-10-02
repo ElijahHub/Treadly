@@ -102,8 +102,6 @@ const stateReducer = (state, action) => {
 export const StateProvider = ({ children }) => {
   const [state, dispatch] = useReducer(stateReducer, initialState);
 
-  console.log(state);
-
   useEffect(() => {
     updateStoredData(state);
   }, [state]);
