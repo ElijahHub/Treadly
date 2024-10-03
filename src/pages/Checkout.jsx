@@ -6,7 +6,7 @@ import { checkOutFormEl } from "../constant";
 import { StateContext } from "../context/StateContext";
 
 const Checkout = () => {
-  const { cartItems } = useContext(StateContext);
+  const { cartItems, dispatch } = useContext(StateContext);
   const navigate = useNavigate();
 
   const stateObj = {
@@ -56,6 +56,12 @@ const Checkout = () => {
     const checkObj = { ...state, [name]: checked };
 
     setState({ ...checkObj });
+  };
+
+  const handleClick = () => {
+    dispatch({
+      type: "RESET_CART_ITEM",
+    });
   };
 
   const cartTotal =
@@ -182,7 +188,7 @@ const Checkout = () => {
             <tbody>
               {cartItems.map((item) => (
                 <tr key={item.id}>
-                  <td className='body-2 text-n-4'>{item.name}</td>
+                  <td className='body-2 text-[12px] text-n-4'>{item.name}</td>
                   <td className='body-2 text-n-4'>
                     x{item.quantity.toString().padStart(2, 0)}
                   </td>
@@ -256,6 +262,7 @@ const Checkout = () => {
               path='/shop/confirmation'
               text='PLACE ORDER'
               className='w-full bg-n-8 text-center py-3 text-n-1  '
+              onClick={handleClick}
             />
           </div>
         </Box>

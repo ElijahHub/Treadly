@@ -5,16 +5,16 @@ import { StateContext } from "../context/StateContext";
 import { useNavigate } from "react-router-dom";
 
 const Confirmation = () => {
-  const { cartItems } = useContext(StateContext);
+  const { orderDetails } = useContext(StateContext);
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (cartItems.length === 0) {
+    if (orderDetails.length === 0) {
       navigate("/shop");
     }
-  }, [cartItems, navigate]);
+  }, [orderDetails, navigate]);
 
-  const total = cartItems
+  const total = orderDetails
     .map((item) => Number(item.price.replace("$", 0)))
     .reduce((a, b) => a + b, 0);
 
@@ -25,11 +25,11 @@ const Confirmation = () => {
     },
     {
       title: "SHIPPING",
-      value: cartItems.length >= 10 ? 100 : 50,
+      value: orderDetails.length >= 10 ? 100 : 50,
     },
     {
       title: "TOTAL",
-      value: total + (cartItems.length >= 10 ? 100 : 50),
+      value: total + (orderDetails.length >= 10 ? 100 : 50),
     },
   ];
 
@@ -73,7 +73,7 @@ const Confirmation = () => {
               </tr>
             </thead>
             <tbody>
-              {cartItems.map((item) => (
+              {orderDetails.map((item) => (
                 <tr key={item.id} className='border-y border-n-3 '>
                   <td className='body-2 text-n-4 py-4'>{item.name}</td>
                   <td className='body-2 text-n-4 py-4'>

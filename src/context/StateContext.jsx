@@ -16,6 +16,7 @@ const initialState =
     ? {
         cartItems: [],
         wishlist: [],
+        orderDetails: [],
         productInView: {},
       }
     : loadStoredData();
@@ -28,6 +29,7 @@ const addToCart = (state, action) => {
   if (existingItem) {
     return {
       ...state,
+      orderDetails: [],
       cartItems: state.cartItems.map((item) =>
         item.id === action.payload.id
           ? { ...item, quantity: item.quantity + 1 }
@@ -37,6 +39,7 @@ const addToCart = (state, action) => {
   } else {
     return {
       ...state,
+      orderDetails: [],
       cartItems: [...state.cartItems, { ...action.payload, quantity: 1 }],
     };
   }
@@ -94,6 +97,12 @@ const stateReducer = (state, action) => {
         ...state,
         productInView: { ...action.payload },
       };
+    case "RESET_CART_ITEM":
+      return {
+        ...state,
+        orderDetails: state.cartItems,
+        cartItems: [],
+      };
     default:
       return state;
   }
@@ -113,6 +122,7 @@ export const StateProvider = ({ children }) => {
         cartItems: state.cartItems,
         wishlist: state.wishlist,
         productInView: state.productInView,
+        orderDetails: state.orderDetails,
       }}
     >
       {children}
