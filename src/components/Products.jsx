@@ -60,7 +60,7 @@ const Products = ({ handleAddToCart, handleAddToWishList, onClickView }) => {
                 handleAddToCart={() => handleAddToCart(item, i)}
                 onClickView={() => onClickView(item)}
                 handleAddToWishList={() => handleAddToWishList(item)}
-                path={`/shop/${i}`}
+                path={`/shop/${item.url}`}
               />
             ))}
           </div>
