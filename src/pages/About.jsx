@@ -40,7 +40,7 @@ const About = () => {
           <div className='hidden lg:block lg:w-1/2 relative  '>
             <div className=' w-[20rem] h-[20rem] absolute left-0 top-0 bg-n-8 overflow-hidden box-border '>
               <img
-                src={shoe_1}
+                src='https://images.asos-media.com/products/new-balance-9060-sneakers-in-bright-blue-with-pink-detail/206054530-1-midblue'
                 alt='shoe'
                 width={300}
                 className='w-full h-full '
@@ -48,7 +48,7 @@ const About = () => {
             </div>
             <div className=' w-[20rem] h-[20rem] absolute right-24 bottom-10 bg-n-8 overflow-hidden box-border '>
               <img
-                src={shoe_4}
+                src='https://images.asos-media.com/products/nike-running-infinity-run-4-sneakers-in-black-and-white/206391098-1-black'
                 alt='shoe'
                 width={300}
                 className='w-full h-full'
@@ -76,7 +76,7 @@ const About = () => {
         <div className=' hidden lg:flex relative py-20 '>
           <div className=' relative w-[20rem] h-[30rem] overflow-hidden box-border'>
             <img
-              src={shoe_6}
+              src='https://images.asos-media.com/products/nike-running-infinity-run-4-sneakers-in-blue-and-white/205825923-1-midblue'
               alt='nike'
               width={400}
               className='w-full h-full'
@@ -84,7 +84,7 @@ const About = () => {
           </div>
           <div className='relative top-[20%] left-[-18%]  w-[20rem] h-[30rem] overflow-hidden box-border'>
             <img
-              src={shoe_4}
+              src='https://images.asos-media.com/products/asos-design-penny-loafers-in-black-and-white-leather/206149953-1-black'
               alt='nike'
               width={400}
               className='w-full h-full'

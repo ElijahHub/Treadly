@@ -8,15 +8,7 @@ import {
   FaPinterest,
 } from "react-icons/fa";
 
-import {
-  blackFri,
-  facebook_logo,
-  google_logo,
-  ios_logo,
-  shoe_1,
-  shoe_3,
-  shoe_4,
-} from "../assets";
+import { blackFri, facebook_logo, google_logo, ios_logo } from "../assets";
 import { adsItem } from "../constant";
 
 const Ads = () => {
@@ -57,7 +49,7 @@ const Ads = () => {
             <div className='flex flex-col items-center justify-center mt-5 '>
               <div className='w-full overflow-hidden rounded-xl'>
                 <img
-                  src={shoe_4}
+                  src='https://images.asos-media.com/products/asos-design-penny-loafers-in-brown-leather-with-fur-detail/206500648-1-brown'
                   className='w-full'
                   width={200}
                   height={200}
@@ -65,7 +57,7 @@ const Ads = () => {
                 />
               </div>
               <div className='mt-5 flex items-center justify-center gap-6'>
-                <h5 className='h5 text-red-500 '>$30.33</h5>
+                <h5 className='h5 text-red-500 '>$64.99</h5>
                 <h5 className='h5 text-n-3 line-through'>$100.33</h5>
               </div>
             </div>
@@ -80,15 +72,14 @@ const Ads = () => {
               Free shipping
             </p>
             <Box
-              className='w-full mt-8 rounded-lg  flex gap-3 flex-wrap justify-center items-center sm:justify-between p-1  sm:p-0 lg:flex-col  lg:gap-7'
+              className='w-full mt-8 rounded-lg flex items-center justify-center '
               background='bg-n-8/10'
             >
-              <div className='sm:w-[15rem] rounded-lg sm:self-start '>
-                <img className='w-full rounded-lg' src={shoe_1} alt='' />
-              </div>
-              <div className='sm:w-[16rem] rounded-lg  sm:self-end '>
-                <img className='w-full rounded-lg' src={shoe_3} alt='' />
-              </div>
+              <img
+                className='w-full rounded-lg'
+                src='https://images.asos-media.com/products/adidas-originals-samba-og-sneakers-in-white-and-green/206495769-1-white'
+                alt=''
+              />
             </Box>
           </Box>
         </div>
@@ -112,7 +103,7 @@ const Ads = () => {
                   className='flex flex-col items-center'
                 >
                   <img
-                    src={item.image}
+                    src={"https://" + item.image}
                     className='rounded-lg'
                     width={125}
                     height={125}

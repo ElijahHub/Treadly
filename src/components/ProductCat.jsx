@@ -16,7 +16,7 @@ const ProductCat = ({ handleAddToCart, handleAddToWishList, onClickView }) => {
   const stateObj = {
     allProduct: [],
     currentPage: 1,
-    pageSize: 12,
+    pageSize: 9,
     selectedBrand: [],
     selectedPrice: [],
     sortColumn: "desc",

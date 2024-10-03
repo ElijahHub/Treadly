@@ -55,18 +55,18 @@ export const features = [
 
 export const adsItem = [
   {
-    image: shoe_3,
-    current_price: '$45.5',
-    prev_price: '$192.3'
+    image: 'images.asos-media.com/products/nike-air-max-90-sneakers-in-white/206574927-1-white',
+    current_price: '$80.0',
+    prev_price: '$110.0'
   },
   {
-    image: shoe_5,
-    current_price: '$25.5',
-    prev_price: '$112.9'
+    image: 'images.asos-media.com/products/nike-training-free-metcon-6-sneakers-in-white-and-green/206572475-1-white',
+    current_price: '$130.0',
+    prev_price: '$150.9'
   },
   {
-    image: shoe_4,
-    current_price: '$51.5',
+    image: 'images.asos-media.com/products/converse-fastbreak-pro-leather-and-nubuck-sneakers-in-burgundy/206138753-1-burgundy',
+    current_price: '$120.0',
     prev_price: '$199.0'
   },
 
