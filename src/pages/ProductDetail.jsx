@@ -7,23 +7,46 @@ import { BiHeart, BiSolidHeart } from "react-icons/bi";
 import Deals from "../components/Deals";
 import { StateContext } from "../context/StateContext";
 import { useNavigate } from "react-router-dom";
+import { getProductDetails } from "../constant/data";
+import { Loader } from "../components";
 
 const ProductDetail = () => {
   const { productInView, dispatch, wishlist } = useContext(StateContext);
 
+  const [details, setDetails] = useState({});
+
+  const [loading, setLoading] = useState(true);
+
+  const [image, setImage] = useState(productInView.imageUrl);
+
+  const [quantity, setQuantity] = useState(1);
+
+  const data = details.images?.map((el) => el.url) || [];
+
+  const images = [...data, productInView.imageUrl];
+
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await getProductDetails(productInView.id);
+        setDetails({ ...data });
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchData();
+  }, []);
 
   useEffect(() => {
     if (Object.entries(productInView).length === 0) {
       navigate("/shop");
     }
   }, [productInView, navigate]);
-
-  const [image, setImage] = useState(shoe_1);
-
-  const [quantity, setQuantity] = useState(1);
-
-  const images = [shoe_1, shoe_2, shoe_3, productInView.imageUrl];
 
   const handleClick = (url) => {
     setImage(url);
@@ -55,6 +78,8 @@ const ProductDetail = () => {
     dispatch({ type: "ADD_TO_WISHLIST", payload: { ...product } });
   };
 
+  if (loading) return <Loader />;
+
   return (
     <>
       {" "}
@@ -71,7 +96,7 @@ const ProductDetail = () => {
                   className='rounded-md cursor-pointer w-[8rem] h-[8rem] flex justify-center items-center  overflow-hidden '
                 >
                   <img
-                    src={img}
+                    src={"https://" + img}
                     className='rounded-md box-border w-full hover:scale-[1.1]'
                     width={120}
                     onClick={() => handleClick(img)}
@@ -82,11 +107,10 @@ const ProductDetail = () => {
             </div>
 
             {/*  */}
-            <div className='w-[35rem] h-[33.5rem] overflow-hidden rounded-md'>
+            <div className='w-[35rem] h-[33.5rem] border border-n-3 overflow-hidden rounded-md'>
               <img
-                src={image}
-                width={500}
-                className='rounded-md w-full '
+                src={"https://" + image}
+                className='rounded-md w-full h-full '
                 alt=''
               />
             </div>
@@ -94,28 +118,25 @@ const ProductDetail = () => {
           {/* Content container */}
           <div className=' w-full flex flex-col  '>
             <div className='flex flex-col mb-3 '>
-              <h4 className='h4'>{productInView.name}</h4>
-              <h5 className='h5'>{productInView.price}</h5>
+              <h4 className='h5'>{productInView.name}</h4>
+              <h5 className='h6'>{productInView.price}</h5>
             </div>
 
             <div className='w-full'>
               <div className='grid grid-cols-2'>
                 <p className='body-2 text-n-3  '>Category</p>
-                <p className='body-2 text-n-8 '>: Boot</p>
+                <p className='body-2 text-n-8 '>: {details.productType}</p>
               </div>
               <div className='grid grid-cols-2'>
-                <p className='body-2 text-n-3 '>Gender</p>
-                <p className='body-2 text-n-8'>: Men</p>
+                <p className='body-2 text-n-3 '>Brand</p>
+                <p className='body-2 text-n-8'>: {details.brand.name}</p>
               </div>
             </div>
 
             <hr className='w-full border border-n-2 my-5' />
 
-            <p className='body-2'>
-              Mill Oil is an innovative oil filled radiator with the most modern
-              technology. If you are looking for something that can make your
-              interior look awesome, and at the same time give you the pleasant
-              warm feeling during the winter.
+            <p className='body-1'>
+              {details.info.aboutMe.replace(/<br\s*\/?>/gi, " ")}
             </p>
 
             <div className=''>

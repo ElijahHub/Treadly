@@ -30,7 +30,7 @@ const App = () => {
             <Route path='/shop/checkout' element={<Checkout />} />
             <Route path='/shop/confirmation' element={<Confirmation />} />
             <Route path='/shop/wishlist' element={<Wishlist />} />
-            <Route path='/shop/:id' element={<ProductDetail />} />
+            <Route path='/shop/*' element={<ProductDetail />} />
             <Route path='*' element={<PageNotFound />} />
           </Routes>
         </Suspense>

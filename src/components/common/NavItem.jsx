@@ -9,7 +9,7 @@ import {
 } from "react-icons/bi";
 import { StateContext } from "../../context/StateContext";
 
-const NavItem = ({ isMobile, isDesktop }) => {
+const NavItem = ({ isMobile, isDesktop, handleClick }) => {
   const { wishlist, cartItems } = useContext(StateContext);
 
   const [search, setSearch] = useState("");
@@ -28,15 +28,17 @@ const NavItem = ({ isMobile, isDesktop }) => {
               <BiHeart
                 className='text-[1.5rem] cursor-pointer  '
                 title='Favorite'
+                onClick={handleClick}
               />
             ) : (
               <BiSolidHeart
                 className='text-[1.5rem] cursor-pointer  text-red-500 '
                 title='Favorite'
+                onClick={handleClick}
               />
             )}
           </Link>
-          <Link to='/shop/cart' className='relative'>
+          <Link to='/shop/cart' className='relative' onClick={handleClick}>
             <BiCartAlt className='text-[1.5rem] cursor-pointer' title='Cart' />
             {cartItems.length !== 0 && (
               <div className='absolute w-[1.2rem] h-[1.2rem] flex items-center justify-center rounded-full bg-n-9 -top-2 -right-2 p-1 '>

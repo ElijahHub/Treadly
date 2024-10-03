@@ -55,7 +55,7 @@ const Products = ({ handleAddToCart, handleAddToWishList, onClickView }) => {
                 key={i}
                 name={item.name}
                 currentItem={isInWishLst(item)}
-                imageUrl={item.image}
+                imageUrl={"https://" + item.imageUrl}
                 price={item.price}
                 handleAddToCart={() => handleAddToCart(item, i)}
                 onClickView={() => onClickView(item)}

@@ -73,46 +73,22 @@ export const adsItem = [
 ]
 
 export const products = [
-  {
-    image: shoe_4,
-    name: 'Nike Air Force 1',
-    price: '$345',
-  },
-  {
-    image: shoe_4,
-    name: 'Nike Air Force 1',
-    price: '$345',
-  },
-  {
-    image: shoe_4,
-    name: 'Nike Air Force 1',
-    price: '$345',
-  },
-  {
-    image: shoe_4,
-    name: 'Nike Air Force 1',
-    price: '$345',
-  },
-  {
-    image: shoe_4,
-    name: 'Nike Air Force 1',
-    price: '$345',
-  },
-  {
-    image: shoe_4,
-    name: 'Nike Air Force 1',
-    price: '$345',
-  },
-  {
-    image: shoe_4,
-    name: 'Nike Air Force 1',
-    price: '$345',
-  },
-  {
-    image: shoe_4,
-    name: 'Nike Air Force 1',
-    price: '$345',
-  },
+  { id: 206157639, name: "Reebok Club C Revenge sneakers in white", brandName: "Reebok", color: "WHITE", imageUrl: "images.asos-media.com/products/reebok-club-c-revenge-sneakers-in-white/206157639-1-white", price: "$85.00", url: "reebok/reebok-club-c-revenge-sneakers-in-white/prd/206157639#colourWayId-206157640" },
+
+  { id: 206138753, name: "Converse Fastbreak Pro leather and nubuck sneakers in burgundy", brandName: "Converse", color: "Burgundy", imageUrl: "images.asos-media.com/products/converse-fastbreak-pro-leather-and-nubuck-sneakers-in-burgundy/206138753-1-burgundy", price: "$80.00", url: "converse/converse-fastbreak-pro-leather-and-nubuck-sneakers-in-burgundy/prd/206138753#colourWayId-206138754" },
+
+  { id: 206333661, name: "ASOS DESIGN chunky sneakers in black with metal hardware", brandName: "ASOS DESIGN", color: "Black", imageUrl: "images.asos-media.com/products/asos-design-chunky-sneakers-in-black-with-metal-hardware/206333661-1-black", price: "$74.99", url: "asos-design/asos-design-chunky-sneakers-in-black-with-metal-hardware/prd/206333661#colourWayId-206333662" },
+
+  { id: 206655991, name: "ASOS DESIGN chunky sneakers in gunmetal", brandName: "ASOS DESIGN", color: "Gunmetal", imageUrl: "images.asos-media.com/products/asos-design-chunky-sneakers-in-gunmetal/206655991-1-gunmetal", price: "$69.99", url: "asos-design/asos-design-chunky-sneakers-in-gunmetal/prd/206655991#colourWayId-206655992" },
+
+  { id: 206500577, name: "ASOS DESIGN chunky loafers in brown suede with snaffle", brandName: "ASOS DESIGN", color: "BROWN", imageUrl: "images.asos-media.com/products/asos-design-chunky-loafers-in-brown-suede-with-snaffle/206500577-1-brown", price: "$64.99", url: "asos-design/asos-design-chunky-loafers-in-brown-suede-with-snaffle/prd/206500577#colourWayId-206500588" },
+
+  { id: 205887479, name: "Crocs Unisex classic clogs in latte brown", brandName: "Crocs", color: "BROWN", imageUrl: "images.asos-media.com/products/crocs-unisex-classic-clogs-in-latte-brown/205887479-1-brown", price: "$55.00", url: "crocs/crocs-unisex-classic-clogs-in-latte-brown/prd/205887479#colourWayId-205887492" },
+
+  { id: 206468848, name: "ASOS DESIGN loafer in stone suede with tassel and natural sole", brandName: "ASOS DESIGN", color: "STONE", imageUrl: "images.asos-media.com/products/asos-design-loafer-in-stone-suede-with-tassel-and-natural-sole/206468848-1-stone", price: "$56.99", url: "asos-design/asos-design-loafer-in-stone-suede-with-tassel-and-natural-sole/prd/206468848#colourWayId-206468849" },
+
+  { id: 206612135, name: "ASOS DESIGN chunky sneakers in brown mix with rope detail", brandName: "ASOS DESIGN", color: "BROWN", imageUrl: "images.asos-media.com/products/asos-design-chunky-sneakers-in-brown-mix-with-rope-detail/206612135-1-brown", price: "$52.99", url: "asos-design/asos-design-chunky-sneakers-in-brown-mix-with-rope-detail/prd/206612135#colourWayId-206612145" }
+
 ]
 
 export const labels = [label_1, label_2, label_3, label_4, label_5]
@@ -436,5 +412,7 @@ export const footer = [
     ]
   }
 ]
+
+
 
 
