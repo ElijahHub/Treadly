@@ -13,7 +13,7 @@ import { adsItem } from "../constant";
 
 const Ads = () => {
   return (
-    <section className='my-10'>
+    <section className='my-10  '>
       <div className='container flex flex-col lg:flex-row gap-3 '>
         {/* box 1 */}
         <div className='  flex flex-col lg:w-[25rem] gap-3'>
@@ -47,12 +47,12 @@ const Ads = () => {
             <h4 className='h4 text-red-500  font-[600] '>Welcome Deal</h4>
             <p className='body-2'>Your exclusive price</p>
             <div className='flex flex-col items-center justify-center mt-5 '>
-              <div className='w-full overflow-hidden rounded-xl'>
+              <div className='w-full lg:w-[17rem] lg:h-[17rem] overflow-hidden rounded-xl  '>
                 <img
                   src='https://images.asos-media.com/products/asos-design-penny-loafers-in-brown-leather-with-fur-detail/206500648-1-brown'
-                  className='w-full'
-                  width={200}
-                  height={200}
+                  className='w-full h-full'
+                  width={150}
+                  height={150}
                   alt='banner'
                 />
               </div>
@@ -72,13 +72,15 @@ const Ads = () => {
               Free shipping
             </p>
             <Box
-              className='w-full mt-8 rounded-lg flex items-center justify-center '
+              className='w-full lg:h-[32rem] mt-10 rounded-lg flex items-center justify-center '
               background='bg-n-8/10'
             >
               <img
-                className='w-full rounded-lg'
+                className='w-full rounded-lg h-full'
                 src='https://images.asos-media.com/products/adidas-originals-samba-og-sneakers-in-white-and-green/206495769-1-white'
-                alt=''
+                width={400}
+                height={400}
+                alt='Adidas original'
               />
             </Box>
           </Box>
@@ -100,15 +102,17 @@ const Ads = () => {
               {adsItem.map((item) => (
                 <div
                   key={item.current_price}
-                  className='flex flex-col items-center'
+                  className='flex flex-col items-center  '
                 >
-                  <img
-                    src={"https://" + item.image}
-                    className='rounded-lg'
-                    width={125}
-                    height={125}
-                    alt=''
-                  />
+                  <div className='w-[7rem] h-[7rem] overflow-hidden box-border'>
+                    <img
+                      src={"https://" + item.image}
+                      className='rounded-lg w-full h-full '
+                      width={125}
+                      height={125}
+                      alt=''
+                    />
+                  </div>
                   <div className='flex gap-2'>
                     <h6 className='h6 text-red-500'>{item.current_price}</h6>
                     <h6 className='h6 text-n-3 line-through '>
