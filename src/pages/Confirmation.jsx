@@ -15,7 +15,11 @@ const Confirmation = () => {
   }, [orderDetails, navigate]);
 
   const total = orderDetails
-    .map((item) => Number(item.price.replace("$", 0)))
+    ?.map((item) => Number(item.price.replace("$", 0)) * item.quantity)
+    .reduce((a, b) => a + b, 0);
+
+  const shipping = orderDetails
+    ?.map((item) => item.quantity)
     .reduce((a, b) => a + b, 0);
 
   const checkOut = [
@@ -25,7 +29,7 @@ const Confirmation = () => {
     },
     {
       title: "SHIPPING",
-      value: orderDetails.length >= 10 ? 100 : 50,
+      value: shipping >= 30 ? 100 : 50,
     },
     {
       title: "TOTAL",
@@ -42,7 +46,7 @@ const Confirmation = () => {
         </h4>
 
         <div className=' w-full flex flex-col items-center gap-5 lg:flex-row lg:justify-between '>
-          {confirmation.map((item) => (
+          {confirmation?.map((item) => (
             <div key={item.title} className=' w-full flex flex-col gap-4'>
               <h6 className='h6  ml-4'>{item.title}</h6>
               <hr className='border border-n-2  ' />
@@ -73,7 +77,7 @@ const Confirmation = () => {
               </tr>
             </thead>
             <tbody>
-              {orderDetails.map((item) => (
+              {orderDetails?.map((item) => (
                 <tr key={item.id} className='border-y border-n-3 '>
                   <td className='body-2 text-n-4 py-4'>{item.name}</td>
                   <td className='body-2 text-n-4 py-4'>
@@ -86,7 +90,7 @@ const Confirmation = () => {
           </table>
 
           <div className='w-full mt-5 py-5'>
-            {checkOut.map((item) => (
+            {checkOut?.map((item) => (
               <div key={item.title} className='grid grid-cols-2 py-1 '>
                 <p className='body-2'>{item.title}</p>
                 <p className='body-2 text-red-500 '>

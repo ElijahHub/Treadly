@@ -53,9 +53,9 @@ const ProductDetail = () => {
   };
 
   const isInWishLst = (item) => {
-    const value = wishlist.map((el) => el.name);
+    const value = wishlist?.map((el) => el.name);
 
-    return value.includes(item.name);
+    return value?.includes(item.name);
   };
 
   const handleAddToCart = (item) => {
@@ -90,7 +90,7 @@ const ProductDetail = () => {
           <div className='w-full flex gap-2 items-center '>
             <div className='flex flex-wrap lg:flex-col gap-2'>
               {/*  */}
-              {images.map((img, i) => (
+              {images?.map((img, i) => (
                 <div
                   key={i}
                   className='rounded-md cursor-pointer w-[8rem] h-[8rem] flex justify-center items-center  overflow-hidden '
@@ -118,25 +118,25 @@ const ProductDetail = () => {
           {/* Content container */}
           <div className=' w-full flex flex-col  '>
             <div className='flex flex-col mb-3 '>
-              <h4 className='h5'>{productInView.name}</h4>
-              <h5 className='h6'>{productInView.price}</h5>
+              <h4 className='h5'>{productInView?.name}</h4>
+              <h5 className='h6'>{productInView?.price}</h5>
             </div>
 
             <div className='w-full'>
               <div className='grid grid-cols-2'>
                 <p className='body-2 text-n-3  '>Category</p>
-                <p className='body-2 text-n-8 '>: {details.productType}</p>
+                <p className='body-2 text-n-8 '>: {details?.productType}</p>
               </div>
               <div className='grid grid-cols-2'>
                 <p className='body-2 text-n-3 '>Brand</p>
-                <p className='body-2 text-n-8'>: {details.brand.name}</p>
+                <p className='body-2 text-n-8'>: {details?.brand?.name}</p>
               </div>
             </div>
 
             <hr className='w-full border border-n-2 my-5' />
 
             <p className='body-1'>
-              {details.info.aboutMe.replace(/<br\s*\/?>/gi, " ")}
+              {details?.info?.aboutMe.replace(/<br\s*\/?>/gi, " ")}
             </p>
 
             <div className=''>
