@@ -13,6 +13,7 @@ import {
   About,
   Login,
   SignUp,
+  Contact,
 } from "./pages";
 import { Footer, Loader, Navbar, ScrollToTop } from "./components";
 import { StateProvider } from "./context/StateContext";
@@ -32,6 +33,7 @@ const App = () => {
             <Route path='/about' element={<About />} />
             <Route path='/shop' element={<Shop />} />
             <Route path='/blog' element={<Blog />} />
+            <Route path='/contacts' element={<Contact />} />
             <Route path='/login' element={<Login />} />
             <Route path='/sign-up' element={<SignUp />} />
             <Route path='/shop/cart' element={<Cart />} />

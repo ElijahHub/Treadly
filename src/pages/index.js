@@ -12,6 +12,7 @@ const Blog = lazy(() => import('./Blog'))
 const About = lazy(() => import('./About'))
 const Login = lazy(() => import('./Login'))
 const SignUp = lazy(() => import('./SignUp'))
+const Contact = lazy(() => import('./Contact'))
 
 
 export {
@@ -25,5 +26,6 @@ export {
   ProductDetail,
   About,
   Login,
-  SignUp
+  SignUp,
+  Contact
 }

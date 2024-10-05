@@ -33,14 +33,14 @@ const Input = ({
   return (
     <>
       {label ? (
-        <div className='w-full flex items-start justify-start flex-col gap-3'>
+        <div className='w-full flex items-start justify-start flex-col '>
           <label htmlFor={id} className='body-2'>
             {label}
             <sup>*</sup>
           </label>
           <input
             type={type || "text"}
-            className={`w-full text-sm bg-n-1 border-2 border-n-3 rounded-sm px-6 py-3 placeholder:opacity-[0.9] focus:outline-none ${
+            className={`w-full text-sm bg-transparent border-2 border-n-3 rounded-sm px-6 py-3 placeholder:opacity-[0.9] focus:outline-none ${
               className ? className : ""
             } `}
             placeholder={placeholder || ""}
@@ -53,7 +53,7 @@ const Input = ({
       ) : (
         <input
           type={type || "text"}
-          className={`w-full text-sm bg-n-1 border-2 border-n-3 rounded-sm px-6 py-3 placeholder:opacity-[0.9] focus:outline-none ${
+          className={`w-full text-sm bg-transparent border-2 border-n-3 rounded-sm px-6 py-3 placeholder:opacity-[0.9] focus:outline-none ${
             className ? className : ""
           } `}
           placeholder={placeholder || ""}
