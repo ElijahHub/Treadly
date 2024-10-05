@@ -85,7 +85,7 @@ const NavItem = ({ isMobile, isDesktop, handleClick }) => {
           </Link>
           <Link
             className=' h-[3rem]  flex gap-1 items-center pl-2 border-l-[3px] border-n-4 cursor-pointer'
-            to='/sign-in'
+            to='/login'
           >
             <BiUser className='text-[1.5rem]' title='Sign in' />
             <p>Sign in</p>

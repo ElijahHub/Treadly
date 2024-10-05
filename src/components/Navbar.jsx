@@ -49,6 +49,7 @@ const Navbar = () => {
               <Button
                 isLink
                 text={"Sign in"}
+                path='/login'
                 className='w-full mt-5 bg-n-8 py-4 rounded-md text-center text-n-1 lg:hidden'
               />
             </div>

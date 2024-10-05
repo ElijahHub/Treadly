@@ -10,6 +10,8 @@ const Wishlist = lazy(() => import('./Wishlist'))
 const ProductDetail = lazy(() => import('./ProductDetail'))
 const Blog = lazy(() => import('./Blog'))
 const About = lazy(() => import('./About'))
+const Login = lazy(() => import('./Login'))
+const SignUp = lazy(() => import('./SignUp'))
 
 
 export {
@@ -21,5 +23,7 @@ export {
   Confirmation,
   Wishlist,
   ProductDetail,
-  About
+  About,
+  Login,
+  SignUp
 }

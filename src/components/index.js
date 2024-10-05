@@ -9,6 +9,7 @@ import Deals from './Deals'
 import Footer from './Footer'
 import ScrollToTop from './ScrollToTop'
 import Loader from './Loader'
+import AuthForm from './AuthForm'
 
 export {
   Navbar,
@@ -21,5 +22,6 @@ export {
   Deals,
   Footer,
   ScrollToTop,
-  Loader
+  Loader,
+  AuthForm
 }
