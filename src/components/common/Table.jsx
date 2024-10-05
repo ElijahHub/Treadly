@@ -11,6 +11,7 @@ const Table = ({
   onClickView,
   onDelete,
   handleQuantity,
+  path,
 }) => {
   const widths = ["w-1/2", "w-1/4", "w-1/6"];
 
@@ -81,8 +82,10 @@ const Table = ({
                 </td>
                 <td>
                   <Button
+                    isLink
                     className='bg-transparent'
                     onClick={() => onClickView(item)}
+                    path={`/shop/${item.url}`}
                   >
                     <FaEye />
                   </Button>
