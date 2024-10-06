@@ -20,7 +20,7 @@ const AuthForm = ({ data }) => {
   ];
 
   return (
-    <div className='container overflow-hidden flex justify-center items-center'>
+    <div className='container  flex justify-center items-center'>
       <div className=' w-full h-[100vh] md:w-[25rem] flex flex-col items-center gap-6 '>
         <div className='mt-10 flex items-center justify-center w-[12rem] xl:mr-8'>
           <img src={logo} alt='logo' width={120} height={40} />
