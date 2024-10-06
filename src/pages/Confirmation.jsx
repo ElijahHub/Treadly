@@ -94,7 +94,8 @@ const Confirmation = () => {
               <div key={item.title} className='grid grid-cols-2 py-1 '>
                 <p className='body-2'>{item.title}</p>
                 <p className='body-2 text-red-500 '>
-                  {item.title === "SHIPPING" && "Flat rate: "}${item.value}
+                  {item.title === "SHIPPING" && "Flat rate: "}$
+                  {item.value.toFixed(2)}
                 </p>
               </div>
             ))}
