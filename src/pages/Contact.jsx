@@ -79,7 +79,7 @@ const Contact = () => {
             className='w-full p-10 flex flex-col gap-5 '
             background='bg-[#eee]'
           >
-            <div className='flex gap-3 items-center '>
+            <div className='flex flex-wrap gap-3 items-center sm:flex-nowrap '>
               <Input
                 id='firstName'
                 name='firstName'
@@ -97,7 +97,7 @@ const Contact = () => {
                 onChange={handleOnChange}
               />
             </div>
-            <div className='flex gap-3 items-center '>
+            <div className='flex gap-3 items-center flex-wrap sm:flex-nowrap'>
               <Input
                 id='phoneNum'
                 name='phoneNum'
@@ -115,7 +115,7 @@ const Contact = () => {
                 onChange={handleOnChange}
               />
             </div>
-            <div className='flex gap-3 items-center '>
+            <div className='flex gap-3 items-center flex-wrap sm:flex-nowrap '>
               <Input
                 id='companyName'
                 name='companyName'
