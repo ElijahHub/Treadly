@@ -5,6 +5,7 @@ import { Button, Pagination } from "../components/common";
 import { paginate } from "../utils/paginate";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import Table from "../components/common/Table";
+import { toast } from "react-hot-toast";
 
 const Wishlist = () => {
   const { wishlist, dispatch } = useContext(StateContext);
@@ -37,6 +38,11 @@ const Wishlist = () => {
     };
 
     dispatch({ type: "ADD_TO_CART", payload: { ...product } });
+
+    toast.success("PRODUCT ADDED TO CART", {
+      duration: 3000,
+      position: "top-right",
+    });
   };
 
   const handleProductView = (product) => {
@@ -49,6 +55,11 @@ const Wishlist = () => {
       wishListItems: wishListItems.filter((item) => item.id !== product.id),
     });
     dispatch({ type: "REMOVE_FROM_WISHLIST", payload: product });
+
+    toast.success("PRODUCT REMOVED FROM WISHLIST", {
+      duration: 3000,
+      position: "top-right",
+    });
   };
 
   const handlePageChange = (page) => {

@@ -17,6 +17,7 @@ import {
 } from "./pages";
 import { Footer, Loader, Navbar, ScrollToTop } from "./components";
 import { StateProvider } from "./context/StateContext";
+import { Toaster } from "react-hot-toast";
 
 const App = () => {
   const location = useLocation();
@@ -26,6 +27,7 @@ const App = () => {
   return (
     <ScrollToTop>
       <StateProvider>
+        <Toaster />
         {!noNavbar.includes(location.pathname) && <Navbar />}
         <Suspense fallback={<Loader />}>
           <Routes>

@@ -9,6 +9,7 @@ import { StateContext } from "../context/StateContext";
 import { useNavigate } from "react-router-dom";
 import { getProductDetails } from "../constant/data";
 import { Loader } from "../components";
+import { toast } from "react-hot-toast";
 
 const ProductDetail = () => {
   const { productInView, dispatch, wishlist } = useContext(StateContext);
@@ -34,7 +35,10 @@ const ProductDetail = () => {
         setDetails({ ...data });
         setLoading(false);
       } catch (error) {
-        console.error("Error fetching data:", error);
+        toast.error(`Error fetching data: ${error.message}`, {
+          duration: 5000,
+          position: "top-right",
+        });
       } finally {
         setLoading(false);
       }

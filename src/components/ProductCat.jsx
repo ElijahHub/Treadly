@@ -9,6 +9,7 @@ import _ from "lodash";
 import { getData } from "../constant/data";
 import { StateContext } from "../context/StateContext";
 import Loader from "./Loader";
+import { toast } from "react-hot-toast";
 
 const ProductCat = ({ handleAddToCart, handleAddToWishList, onClickView }) => {
   const { wishlist } = useContext(StateContext);
@@ -44,7 +45,10 @@ const ProductCat = ({ handleAddToCart, handleAddToWishList, onClickView }) => {
         setState({ ...state, allProduct: [...data] });
         setLoading(false);
       } catch (error) {
-        console.error("Error fetching data:", error); // Gracefully handle the error
+        toast.error(`Error fetching data: ${error.message}`, {
+          duration: 5000,
+          position: "top-right",
+        }); // Gracefully handle the error
       } finally {
         setLoading(false);
       }

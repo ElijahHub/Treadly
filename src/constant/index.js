@@ -91,7 +91,7 @@ export const products = [
 
 ]
 
-export const labels = [label_1, label_2, label_3, label_4, label_5]
+export const labels = [label_1, label_2, label_3, label_4]
 
 export const FAQS = [
   'Bring of had which their whose yours it own ?',

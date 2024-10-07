@@ -9,6 +9,7 @@ import {
 } from "../components";
 import Ads from "../components/Ads";
 import { StateContext } from "../context/StateContext";
+import { toast } from "react-hot-toast";
 
 const Home = () => {
   const { dispatch } = useContext(StateContext);
@@ -23,10 +24,20 @@ const Home = () => {
     };
 
     dispatch({ type: "ADD_TO_CART", payload: { ...product } });
+
+    toast.success("PRODUCT ADDED TO CART", {
+      duration: 3000,
+      position: "top-right",
+    });
   };
 
   const handleAddToWishList = (product) => {
     dispatch({ type: "ADD_TO_WISHLIST", payload: { ...product } });
+
+    toast.success("PRODUCT ADDED TO WISHLIST", {
+      duration: 3000,
+      position: "top-right",
+    });
   };
 
   const handleProductView = (product) => {

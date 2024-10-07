@@ -3,9 +3,9 @@ import { labels } from "../constant";
 
 const Labels = () => {
   return (
-    <div className='container my-20 flex items-center justify-center gap-20 flex-wrap'>
+    <div className='container py-20 flex items-center justify-center gap-20 flex-wrap'>
       {labels.map((item, i) => (
-        <div key={i} className='cursor-pointer'>
+        <div key={i} className='cursor-pointer w-[10rem] '>
           <img
             src={item}
             className=' w-full opacity-20 hover:opacity-100'

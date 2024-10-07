@@ -6,6 +6,7 @@ import { FAQS, labels } from "../constant";
 import { FaQuestionCircle } from "react-icons/fa";
 import { BsFillQuestionCircleFill } from "react-icons/bs";
 import { CiCircleQuestion } from "react-icons/ci";
+import { Labels } from "../components";
 
 const About = () => {
   const [active, setActive] = useState(0);
@@ -58,19 +59,7 @@ const About = () => {
         </div>
       </div>
       <div className='bg-[#eee]'>
-        <div className='container  flex items-center justify-center gap-10 py-10 flex-wrap'>
-          {labels.map((item, i) => (
-            <div key={i} className='cursor-pointer'>
-              <img
-                src={item}
-                className=' w-full'
-                width={200}
-                height={200}
-                alt='images'
-              />
-            </div>
-          ))}
-        </div>
+        <Labels />
       </div>
       <div className='container my-20  grid grid-cols-1 gap-6 justify-center lg:grid-cols-2 '>
         <div className=' hidden lg:flex relative py-20 '>

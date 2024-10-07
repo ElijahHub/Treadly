@@ -3,7 +3,7 @@ import { CommonHero } from "../components/common/Others";
 import { banner } from "../assets";
 import { Deals, ProductCat } from "../components";
 import { StateContext } from "../context/StateContext";
-import { getData } from "../constant/data";
+import { toast } from "react-hot-toast";
 
 const Shop = () => {
   const { dispatch } = useContext(StateContext);
@@ -18,10 +18,20 @@ const Shop = () => {
     };
 
     dispatch({ type: "ADD_TO_CART", payload: { ...product } });
+
+    toast.success("PRODUCT ADDED TO CART", {
+      duration: 3000,
+      position: "top-right",
+    });
   };
 
   const handleAddToWishList = (product) => {
     dispatch({ type: "ADD_TO_WISHLIST", payload: { ...product } });
+
+    toast.success("PRODUCT ADDED TO WISHLIST", {
+      duration: 3000,
+      position: "top-right",
+    });
   };
 
   const handleProductView = (product) => {

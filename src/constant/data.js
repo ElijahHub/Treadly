@@ -1,4 +1,5 @@
 import { detailsOptions, fetchData, productOptions } from "../utils/fetchData";
+import { toast } from 'react-hot-toast'
 
 export async function getData() {
   try {
@@ -24,7 +25,10 @@ export async function getData() {
     return productData;
 
   } catch (error) {
-    console.error("Error fetching or processing data:", error);
+    toast.error(`Error fetching or processing data: ${error.message}`, {
+      duration: 5000,
+      position: "top-right",
+    })
     return []; // Return an empty array or handle the error as needed
   }
 }
@@ -52,7 +56,10 @@ export async function getProductDetails(id) {
 
     return details
   } catch (error) {
-    console.error("Error fetching or processing data:", error);
+    toast.error(`Error fetching or processing data: ${error.message}`, {
+      duration: 5000,
+      position: "top-right",
+    })
     return []; // Return an empty array or handle the error as needed
   }
 }

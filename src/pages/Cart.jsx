@@ -5,6 +5,7 @@ import { Button, Pagination } from "../components/common";
 import { paginate } from "../utils/paginate";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import Table from "../components/common/Table";
+import { toast } from "react-hot-toast";
 
 const Cart = () => {
   const { cartItems, dispatch } = useContext(StateContext);
@@ -34,6 +35,11 @@ const Cart = () => {
       cartProducts: cartProducts.filter((p) => p.id !== product.id),
     });
     dispatch({ type: "REMOVE_FROM_CART", payload: product });
+
+    toast.success("PRODUCT REMOVED FROM CART", {
+      duration: 3000,
+      position: "top-right",
+    });
   };
 
   const handlePageChange = (page) => {
