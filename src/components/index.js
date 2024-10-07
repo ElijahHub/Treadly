@@ -10,6 +10,7 @@ import Footer from './Footer'
 import ScrollToTop from './ScrollToTop'
 import Loader from './Loader'
 import AuthForm from './AuthForm'
+import GoogleMap from './GoogleMap'
 
 export {
   Navbar,
@@ -23,5 +24,6 @@ export {
   Footer,
   ScrollToTop,
   Loader,
-  AuthForm
+  AuthForm,
+  GoogleMap
 }

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Box, CommonHero } from "../components/common/Others";
 import { banner } from "../assets";
-import { Deals } from "../components";
+import { Deals, GoogleMap } from "../components";
 import { Button, Input } from "../components/common";
 
 const Contact = () => {
@@ -39,6 +39,7 @@ const Contact = () => {
   return (
     <>
       <CommonHero text='contact' quote='CONTACT US' image={banner} />
+      <GoogleMap />
       <div className='container py-20'>
         <div className='flex flex-col lg:flex-row gap-6 '>
           <div className='flex flex-col gap-3 '>
