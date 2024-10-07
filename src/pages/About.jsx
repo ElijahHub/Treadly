@@ -1,15 +1,30 @@
 import React, { useState } from "react";
+import StarRating from "react-star-ratings";
 import { CommonHero } from "../components/common/Others";
-import { banner, shoe_1, shoe_2, shoe_4, shoe_6, shoe_7 } from "../assets";
+import { banner, review_img } from "../assets";
 import { Button } from "../components/common";
-import { FAQS, labels } from "../constant";
-import { FaQuestionCircle } from "react-icons/fa";
-import { BsFillQuestionCircleFill } from "react-icons/bs";
+import { FAQS } from "../constant";
 import { CiCircleQuestion } from "react-icons/ci";
-import { Labels } from "../components";
+import { Deals, Labels } from "../components";
+import { BiArrowToRight } from "react-icons/bi";
+import { FaArrowRight } from "react-icons/fa6";
 
 const About = () => {
   const [active, setActive] = useState(0);
+  const reviews = [
+    {
+      name: "Anthony N. Southall",
+      country: "Australia",
+    },
+    {
+      name: "Tommy Reaves",
+      country: "Melbourne",
+    },
+    {
+      name: "Cassandra Noel",
+      country: "Africa",
+    },
+  ];
 
   return (
     <>
@@ -114,7 +129,49 @@ const About = () => {
       </div>
       <hr className='border-[0.5px] border-[#eee]  ' />
 
-      <div className='container'></div>
+      <div className='container my-20 flex flex-col gap-10 '>
+        <div className='flex items-center justify-between'>
+          <div className='flex flex-col gap-4 items-start'>
+            <p className='body-2 text-red-500'>WHAT BUYERS SAY</p>
+            <h3 className='h3'>Latest Buyers Reviews</h3>
+          </div>
+          <div className=' hidden sm:flex items-center justify-end'>
+            <Button className='flex items-center justify-center gap-2 bg-red-500 py-4 px-6 rounded-sm '>
+              <p className='body-2 text-n-1 '>More Reviews</p>
+              <FaArrowRight className='text-n-1' />
+            </Button>
+          </div>
+        </div>
+
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 '>
+          {reviews.map((el, i) => (
+            <div
+              key={i}
+              className='flex flex-col items-start p-11 border border-n-3 rounded-sm gap-10 '
+            >
+              <p className='text-body-2  text-n-3'>
+                "Impressed with master class support of the team and really look
+                forward for the future. Really, really well made! Love that each
+                component is handmade and customized Great Work!"
+              </p>
+              <div className='flex gap-5 justify-start items-center '>
+                <div className='w-[5rem] h-[5rem]  rounded-full'>
+                  <img
+                    src={review_img}
+                    alt='profile pic'
+                    className='w-full rounded-full'
+                  />
+                </div>
+                <div className='flex flex-col gap-2 '>
+                  <h5 className='h5'>{el.name}</h5>
+                  <p className='text-body-2 text-n-3'>{el.country}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <Deals />
     </>
   );
 };

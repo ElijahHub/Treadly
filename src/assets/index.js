@@ -35,6 +35,7 @@ import blogImg4 from './blog/blog_img_4.jpg'
 import blogImg5 from './blog/blog_img_5.jpg'
 import blogImg6 from './blog/blog_img_6.jpg'
 
+import review_img from './review_img.png'
 
 export {
   logo,
@@ -71,4 +72,5 @@ export {
   blogImg4,
   blogImg5,
   blogImg6,
+  review_img
 }

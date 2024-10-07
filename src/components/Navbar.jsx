@@ -32,7 +32,7 @@ const Navbar = () => {
           <nav
             className={` ${
               openNavigation ? "translate-x-0" : "-translate-x-80 "
-            } w-[20rem] fixed transition-all top-[4.79rem] left-0 right-0 bottom-0 bg-[#ffffff] px-3 shadow-xl lg:translate-x-0 lg:px-0 lg:static lg:-ml-[7rem]  lg:flex lg:bg-transparent lg:shadow-none `}
+            } w-[20rem] fixed transition-all top-[4.28rem] left-0 right-0 bottom-0 bg-[#ffffff] px-3 shadow-xl lg:translate-x-0 lg:px-0 lg:static lg:-ml-[7rem]  lg:flex lg:bg-transparent lg:shadow-none `}
           >
             <div className='z-2 flex flex-col items-start justify-start  lg:flex-row w-full '>
               <NavItem isMobile handleClick={handleClick} />
