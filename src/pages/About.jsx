@@ -6,7 +6,6 @@ import { Button } from "../components/common";
 import { FAQS } from "../constant";
 import { CiCircleQuestion } from "react-icons/ci";
 import { Deals, Labels } from "../components";
-import { BiArrowToRight } from "react-icons/bi";
 import { FaArrowRight } from "react-icons/fa6";
 
 const About = () => {
@@ -154,6 +153,13 @@ const About = () => {
                 forward for the future. Really, really well made! Love that each
                 component is handmade and customized Great Work!"
               </p>
+              <StarRating
+                starRatedColor='#ff9900'
+                starDimension='25px'
+                starSpacing='2px'
+                isSelectable={false}
+                rating={5}
+              />
               <div className='flex gap-5 justify-start items-center '>
                 <div className='w-[5rem] h-[5rem]  rounded-full'>
                   <img

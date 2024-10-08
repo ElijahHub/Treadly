@@ -21,7 +21,7 @@ const Accordion = ({ className, handleChecked, handleColorSelection }) => {
 
   return (
     <div className={`space-y-2 ${className}`}>
-      {catalog.map((item, i) => (
+      {catalog.map((item) => (
         <div key={item.title} className=''>
           <div
             className='flex justify-between mb-2 cursor-pointer'

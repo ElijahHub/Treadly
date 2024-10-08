@@ -83,7 +83,12 @@ const Confirmation = () => {
                   <td className='body-2 text-n-4 py-4'>
                     x{item.quantity.toString().padStart(2, 0)}
                   </td>
-                  <td className='body-2 text-n-6 py-4'>{item.price}</td>
+                  <td className='body-2 text-n-6 py-4'>
+                    $
+                    {(
+                      item.quantity * Number(item.price.replace("$", 0))
+                    ).toFixed(2)}
+                  </td>
                 </tr>
               ))}
             </tbody>

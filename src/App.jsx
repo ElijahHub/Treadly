@@ -1,4 +1,4 @@
-import { Suspense } from "react";
+import { Suspense, useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import {
   Home,
@@ -23,6 +23,49 @@ const App = () => {
   const location = useLocation();
 
   const noNavbar = ["/login", "/sign-up"];
+
+  useEffect(() => {
+    const pathname = location.pathname;
+
+    switch (pathname) {
+      case "/":
+        document.title = "Treadly | Home";
+        break;
+      case "/about":
+        document.title = "Treadly | About Us";
+        break;
+      case "/shop":
+        document.title = "Treadly | Shop";
+        break;
+      case "/blog":
+        document.title = "Treadly | Blog";
+        break;
+      case "/contacts":
+        document.title = "Treadly | Contact Us";
+        break;
+      case "/login":
+        document.title = "Treadly | Login";
+        break;
+      case "/sing-up":
+        document.title = "Treadly | Sign Up";
+        break;
+      case "/shop/checkout":
+        document.title = "Treadly | CheckOut";
+        break;
+      case "/shop/cart":
+        document.title = "Treadly | Cart";
+        break;
+      case "/shop/wishlist":
+        document.title = "Treadly | Wishlist";
+        break;
+      case "/shop/confirmation":
+        document.title = "Treadly | Confirmation";
+        break;
+      default:
+        document.title = "Treadly | Product Details";
+        break;
+    }
+  }, [location.pathname]);
 
   return (
     <ScrollToTop>

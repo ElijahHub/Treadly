@@ -33,11 +33,6 @@ const Home = () => {
 
   const handleAddToWishList = (product) => {
     dispatch({ type: "ADD_TO_WISHLIST", payload: { ...product } });
-
-    toast.success("PRODUCT ADDED TO WISHLIST", {
-      duration: 3000,
-      position: "top-right",
-    });
   };
 
   const handleProductView = (product) => {

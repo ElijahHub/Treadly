@@ -71,6 +71,10 @@ const Checkout = () => {
           .map((el) => Number(el.price.replace("$", 0)) * el.quantity)
           .reduce((a, b) => a + b);
 
+  const shipping = cartItems
+    ?.map((item) => item.quantity)
+    .reduce((a, b) => a + b, 0);
+
   const checkOut = [
     {
       title: "SUBTOTAL",
@@ -78,11 +82,11 @@ const Checkout = () => {
     },
     {
       title: "SHIPPING",
-      value: cartItems.length > 12 ? 100 : 50,
+      value: shipping >= 30 ? 100 : 50,
     },
     {
       title: "TOTAL",
-      value: cartTotal.toFixed(2) + (cartItems.length > 12 ? 100 : 50),
+      value: (cartTotal + (cartItems.length > 12 ? 100 : 50)).toFixed(2),
     },
   ];
 
